@@ -1,0 +1,15 @@
+{% extends 'school_book/base.html' %}
+{% block title %}Student form{% endblock %}
+{% block content %}
+        <div class="ui segment">
+            <h3 class="ui block header">
+                Student Details
+            </h3>
+
+            <form  method="post" class="ui form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input  type="submit"  value="Submit"  class="ui button"/>
+            </form>
+        </div>
+{% endblock %}

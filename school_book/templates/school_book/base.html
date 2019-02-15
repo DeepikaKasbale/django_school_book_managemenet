@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+    <title>{% block title %}My site{% endblock %}</title>
+</head>
+<body>
+    <div class="ui container">
+        <div class="ui segment">
+            <h1>Welcome... </h1>
+        </div>
+
+        {% block content %}
+        {% endblock %}
+
+        <footer>
+            <div>
+                <a href="{% url 'index' %}">
+                    <div class="ui right floated primary button">
+                      Home
+                    </div>
+                </a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

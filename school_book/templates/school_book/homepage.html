@@ -1,0 +1,38 @@
+{% extends 'school_book/base.html' %}
+{% block title %}School List{% endblock %}
+{% block content %}
+        <div class="ui placeholder  segment">
+            <div class="ui three column stackable center aligned grid">
+                    {% for each_card in block_list %}
+                        <div class="column">
+                            <div class="ui cards">
+                                <div class="card">
+                                    <div class="content">
+                                        <div class="ui header"> {{ each_card.name }} </div>
+                                    </div>
+                                    <div class="extra content">
+                                          <div class="ui three buttons">
+                                                <a href="{% url each_card.search_url %}">
+                                                    <div class="ui basic green button">
+                                                        Search
+                                                    </div>
+                                                </a>
+                                                <a href="{% url each_card.list_url %}">
+                                                    <div class="ui basic red button">
+                                                            List
+                                                    </div>
+                                                </a>
+                                                <a href="{% url each_card.create_url %}">
+                                                    <div class="ui basic blue button">
+                                                            Create
+                                                    </div>
+                                                </a>
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+            </div>
+        </div>
+{% endblock %}

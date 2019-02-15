@@ -1,0 +1,28 @@
+{% extends 'school_book/base.html' %}
+{% block title %}School List{% endblock %}
+{% block content %}
+        <div class="ui segment">
+            <div class="ui three stackable cards">
+                {% for school in object_list %}
+                <div class="card">
+                    <div class="content">
+                        <a class="header" href="#">{{school.school_name}}</a>
+                    </div>
+                    <div class="extra content">
+                        <div class="ui three buttons">
+                            <a  href="{% url 'school_detail'  school.id  %}">
+                                <div class="ui basic blue button">Details</div>
+                            </a>
+                            <a  href="{% url 'school_edit'  school.id  %}">
+                                <div class="ui basic green button">Edit</div>
+                            </a>
+                            <a  href="{% url 'school_delete'  school.id  %}">
+                                <div class="ui basic red button">Delete</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+{% endblock %}

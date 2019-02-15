@@ -1,0 +1,16 @@
+{% extends 'school_book/base.html' %}
+{% block title %}School Details{% endblock %}
+{% block content %}
+        <div class="ui segment">
+            <h3 class="ui block header">
+                School Details
+            </h3>
+            <div class="content">
+                <p>Name: {{object.school_name}} </p>
+                <p>Email ID: {{object.school_email_id}}</p>
+                <p>Gender: {{object.principal_name}}</p>
+                <p>Address: {{object.school_address}}</p>
+                <p>Phone number: {{object.phone_number}}</p>
+            </div>
+        </div>
+{% endblock %}

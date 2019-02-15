@@ -1,0 +1,27 @@
+{% extends 'school_book/base.html' %}
+{% block title %}Search Book{% endblock %}
+{% block content %}
+        <div class="ui segment">
+            <form id="search_books" action="{% url 'book_search' %}" method="post">
+                {% csrf_token %}
+                <div class="ui big form">
+                    <div class="fields">
+                        <div class="field">
+                            <input placeholder="Book name" type="text" name="book_title">
+                        </div>
+                    </div>
+                    <input type="submit" value="Search Book" class="ui submit green button"/>
+                </div>
+            </form>
+        </div>
+        {% if error %}
+        <div  class="ui segment">
+            <div class="ui negative message">
+                <i class="close icon"></i>
+                <div class="header">
+                    {{ error }}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'school_book/base.html' %}
+{% block title %}School Delete{% endblock %}
+{% block content %
+        <div class="ui segment">
+            <h3 class="ui block header">
+                School Details Delete ?
+            </h3>
+
+            <form  method="post" class="ui form">
+                {% csrf_token %}
+                Are you sure you want to delete this School?
+                <input  type="submit"  value="Submit" class="ui button" />
+            </form>
+        </div>
+{% endblock %}
