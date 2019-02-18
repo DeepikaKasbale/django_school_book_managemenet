@@ -2,7 +2,8 @@
 {% block title %}School List{% endblock %}
 {% block content %}
         <div class="ui segment">
-            <div class="ui three stackable cards">
+            {% if object_list %}
+                <div class="ui three stackable cards">
                 {% for school in object_list %}
                 <div class="card">
                     <div class="content">
@@ -24,5 +25,14 @@
                 </div>
                 {% endfor %}
             </div>
+            {% else %}
+                <div  class="ui segment">
+                    <div class="ui negative message">
+                        <div class="header">
+                            Please create School record.
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
         </div>
 {% endblock %}

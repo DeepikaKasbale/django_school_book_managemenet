@@ -131,6 +131,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
 # Superadmin creds
 # super.admin@demo.com
 # 1234@abcd

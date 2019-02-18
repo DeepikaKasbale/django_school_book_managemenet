@@ -35,4 +35,34 @@
                     {% endfor %}
             </div>
         </div>
+        <div class="ui segment">
+            <div class="ui two column very relaxed grid">
+                <div class="column">
+                    <div class="card">
+                        <div class="content">
+                            <div class="ui header">
+                                <a href="{% url 'book_request' %}">
+                                    <div class="ui basic blue button">
+                                        Create Book Request
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <div class="content">
+                            <div class="ui header">
+                                <a href="{% url 'data_import' %}">
+                                    <div class="ui basic blue button">
+                                        Import Data
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 {% endblock %}

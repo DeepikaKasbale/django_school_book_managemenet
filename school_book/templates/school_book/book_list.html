@@ -2,27 +2,37 @@
 {% block title %}book List{% endblock %}
 {% block content %}
         <div class="ui segment">
-            <div class="ui three stackable cards">
-            {% for book in object_list %}
-            <div class="card">
-                <div class="content">
-                    <a class="header" href="#">{{book.book_title}}</a>
+            {% if object_list %}
+                <div class="ui three stackable cards">
+                    {% for book in object_list %}
+                        <div class="card">
+                            <div class="content">
+                                <a class="header" href="#">{{book.book_title}}</a>
+                            </div>
+                            <div class="extra content">
+                                <div class="ui two buttons">
+                                    <a  href="{% url 'book_detail'  book.id  %}">
+                                        <div class="ui basic blue button">Details</div>
+                                    </a>
+                                    <a  href="{% url 'book_edit'  book.id  %}">
+                                        <div class="ui basic green button">Edit</div>
+                                    </a>
+                                    <a  href="{% url 'book_delete'  book.id  %}">
+                                        <div class="ui basic red button">Delete</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
-                <div class="extra content">
-                    <div class="ui two buttons">
-                        <a  href="{% url 'book_detail'  book.id  %}">
-                            <div class="ui basic blue button">Details</div>
-                        </a>
-                        <a  href="{% url 'book_edit'  book.id  %}">
-                            <div class="ui basic green button">Edit</div>
-                        </a>
-                        <a  href="{% url 'book_delete'  book.id  %}">
-                            <div class="ui basic red button">Delete</div>
-                        </a>
+            {% else %}
+                <div  class="ui segment">
+                    <div class="ui negative message">
+                        <div class="header">
+                            Please create book record. Books are not available yet.
+                        </div>
                     </div>
                 </div>
-            </div>
-        {% endfor %}
-        </div>
+            {% endif %}
         </div>
 {% endblock %}

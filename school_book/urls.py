@@ -27,4 +27,5 @@ urlpatterns = [
     path('books/search', views.search_book, name='book_search'),
     #request
     path('books/request', views.request_book, name='book_request'),
+    path('data/import', views.data_import, name='data_import'),
 ]

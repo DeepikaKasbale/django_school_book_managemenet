@@ -1,0 +1,43 @@
+{% extends 'school_book/base.html' %}
+{% block title %}import{% endblock %}
+{% block content %}
+    <div class="ui segment">
+         <form method="post" enctype="multipart/form-data" class="ui form" action="{% url 'data_import' %}">
+            {% csrf_token %}
+                <h4 class="ui dividing header">Import Student data from CSV</h4>
+                    <div class="inline fields">
+                        <label> Select model for importing data: </label>
+                            <div class="field">
+                                <div class="ui radio checkbox">
+                                    <input type="radio" name="choice" id="choice_student" value="Student" class="field">
+                                    <label>Student</label>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="ui radio checkbox">
+                                    <input type="radio" name="choice" id="choice_books" value="Book" class="field">
+                                    <label>Book</label>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="ui radio checkbox">
+                                    <input type="radio" name="choice" id="choice_school" value="School" class="field">
+                                    <label>School</label>
+                                </div>
+                            </div>
+                    </div>
+                <input type="file" name="csv_file" id="csv_file"  required="True" class="field">
+                <button type="submit" class="ui submit green button">Upload File</button>
+         </form>
+    </div>
+    {% if error %}
+    <div  class="ui segment">
+            <div class="ui negative message">
+                <i class="close icon"></i>
+                <div class="header">
+                    {{ error }}
+                </div>
+            </div>
+    </div>
+    {%  endif %}
+{% endblock %}
